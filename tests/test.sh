@@ -132,10 +132,11 @@ FAKE_SHELL
 chmod +x "$FAKE_BIN/curl" "$FAKE_BIN/tmux" "$FAKE_BIN/login-shell" \
     "$FAKE_HOME/.local/bin/codex"
 
+HOST_PATH="$PATH"
 run_env=(
     env
     "HOME=$FAKE_HOME"
-    "PATH=$FAKE_BIN:/usr/bin:/bin"
+    "PATH=$FAKE_BIN:$HOST_PATH"
     "SHELL=$FAKE_BIN/login-shell"
     "TEST_LOG=$TEST_LOG"
     "TEST_RUNNER_SOURCE=$RUNNER"
