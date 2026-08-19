@@ -1,10 +1,23 @@
-# Codex TMUX Bootstrap v26.7.14.1
+# PUBLIC-TMUX-Codex
 
-Install or update Codex with OpenAI's official installer, enter TMUX, and start
-Codex immediately.
+`PUBLIC-TMUX-Codex` is the public, organization-neutral Codex-only bootstrap for
+installing OpenAI Codex from its official source and running it immediately
+inside TMUX. It contains no DEC-Networks credentials, private hosts, private
+paths, or private repository dependencies.
+
+Current bootstrap version: `v26.7.14.1`.
+
+## Repository Identity
+
+- Repository: `DEC-Networks/PUBLIC-TMUX-Codex`
+- Audience: public Codex users and repackagers
+- Agent: OpenAI Codex CLI
+- Scope: portable TMUX bootstrap only; not internal workstation configuration
+
+Install or update Codex, enter TMUX, and start Codex immediately:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/DEC-Networks/codex-tmux-bootstrap/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/DEC-Networks/PUBLIC-TMUX-Codex/main/install.sh | bash
 ```
 
 That is the entire installation command.
@@ -12,7 +25,7 @@ That is the entire installation command.
 Pinned release:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/DEC-Networks/codex-tmux-bootstrap/v26.7.14.1/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/DEC-Networks/PUBLIC-TMUX-Codex/v26.7.14.1/install.sh | bash
 ```
 
 ## What It Does
@@ -34,13 +47,13 @@ subject to OpenAI's terms and policies.
 Pass runner options after `bash -s --`:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/DEC-Networks/codex-tmux-bootstrap/main/install.sh | bash -s -- --session my-codex
+curl -fsSL https://raw.githubusercontent.com/DEC-Networks/PUBLIC-TMUX-Codex/main/install.sh | bash -s -- --session my-codex
 ```
 
 Pass Codex arguments after a second `--`:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/DEC-Networks/codex-tmux-bootstrap/main/install.sh | bash -s -- -- -C "$PWD"
+curl -fsSL https://raw.githubusercontent.com/DEC-Networks/PUBLIC-TMUX-Codex/main/install.sh | bash -s -- -- -C "$PWD"
 ```
 
 Configuration is available through `CODEX_TMUX_SESSION`,
