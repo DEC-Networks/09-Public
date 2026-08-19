@@ -210,10 +210,11 @@ FAKE_HOSTNAME
 
 chmod +x "$FAKE_BIN"/*
 
+HOST_PATH="$PATH"
 run_env=(
     env
     "HOME=$FAKE_HOME"
-    "PATH=$FAKE_BIN:/usr/bin:/bin"
+    "PATH=$FAKE_BIN:$HOST_PATH"
     "SHELL=$FAKE_BIN/login-shell"
     "CODEX_INSTALL_DIR=$FAKE_HOME/.local/bin"
     "GROK_BIN_DIR=$FAKE_HOME/.grok/bin"
@@ -293,11 +294,11 @@ if (( rc != 0 )); then ok 'propagates official installer failures'; else bad 'pr
 assert_no_log 'codex-launch=' 'does not launch Codex after installer failure'
 
 warning="$(printf 'x' | env \
-    HOME="$FAKE_HOME" PATH="$FAKE_BIN:/usr/bin:/bin" SHELL="$FAKE_BIN/login-shell" \
+    HOME="$FAKE_HOME" PATH="$FAKE_BIN:$HOST_PATH" SHELL="$FAKE_BIN/login-shell" \
     TMUX='fake,1,0' JERVIS_LAUNCHER_COLUMNS=120 JERVIS_LAUNCHER_ROWS=40 \
     "$RUNNER")"
 accepted="$(printf ' X' | env \
-    HOME="$FAKE_HOME" PATH="$FAKE_BIN:/usr/bin:/bin" SHELL="$FAKE_BIN/login-shell" \
+    HOME="$FAKE_HOME" PATH="$FAKE_BIN:$HOST_PATH" SHELL="$FAKE_BIN/login-shell" \
     TMUX='fake,1,0' JERVIS_AGENT_TEST_MODE=1 JERVIS_LAUNCHER_COLUMNS=120 JERVIS_LAUNCHER_ROWS=40 \
     TEST_LOG="$TEST_LOG" "$RUNNER")"
 warning_plain="$(printf '%s\n' "$warning" | strip_ansi)"
@@ -336,7 +337,7 @@ else
 fi
 
 render="$(env TERM=xterm-256color JERVIS_LAUNCHER_COLUMNS=120 \
-    PATH="$FAKE_BIN:/usr/bin:/bin" "$RUNNER" --render)"
+    PATH="$FAKE_BIN:$HOST_PATH" "$RUNNER" --render)"
 plain="$(printf '%s\n' "$render" | strip_ansi)"
 
 if grep -Fq 'JERVIS' <<< "$plain" \
@@ -410,7 +411,7 @@ else
 fi
 
 pve_render="$(env TERM=xterm-256color JERVIS_LAUNCHER_COLUMNS=120 \
-    TEST_HOSTNAME=pve42 PATH="$FAKE_BIN:/usr/bin:/bin" "$RUNNER" --render | strip_ansi)"
+    TEST_HOSTNAME=pve42 PATH="$FAKE_BIN:$HOST_PATH" "$RUNNER" --render | strip_ansi)"
 if grep -Fq 'Host: PVe42' <<< "$pve_render"; then
     ok 'generic PVe hostname capitalization rule'
 else
