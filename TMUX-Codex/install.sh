@@ -6,7 +6,7 @@ set -euo pipefail
 umask 077
 
 readonly BOOTSTRAP_VERSION="v26.7.14.1"
-readonly DEFAULT_RUNNER_URL="https://raw.githubusercontent.com/DEC-Networks/PUBLIC-TMUX-Codex/v26.7.14.1/runner.sh"
+readonly DEFAULT_RUNNER_URL="https://raw.githubusercontent.com/DEC-Networks/09-Public/tmux-codex-v26.7.14.1/TMUX-Codex/runner.sh"
 readonly DEFAULT_RUNNER_SHA256="42b070794abf04c78c152a4e478cfc4514a2d2235387c09ff08bab2b85fdb4e1"
 
 RUNNER_URL="${CODEX_TMUX_RUNNER_URL:-$DEFAULT_RUNNER_URL}"

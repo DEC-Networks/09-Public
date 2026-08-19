@@ -1,6 +1,7 @@
-# PUBLIC-TMUX-Codex
+# TMUX Codex
 
-`PUBLIC-TMUX-Codex` is the public, organization-neutral Codex-only bootstrap for
+`TMUX-Codex` is the public, organization-neutral Codex-only bootstrap in the
+`DEC-Networks/09-Public` repository for
 installing OpenAI Codex from its official source and running it immediately
 inside TMUX. It contains no DEC-Networks credentials, private hosts, private
 paths, or private repository dependencies.
@@ -9,7 +10,7 @@ Current bootstrap version: `v26.7.14.1`.
 
 ## Repository Identity
 
-- Repository: `DEC-Networks/PUBLIC-TMUX-Codex`
+- Repository path: `DEC-Networks/09-Public/TMUX-Codex`
 - Audience: public Codex users and repackagers
 - Agent: OpenAI Codex CLI
 - Scope: portable TMUX bootstrap only; not internal workstation configuration
@@ -17,7 +18,7 @@ Current bootstrap version: `v26.7.14.1`.
 Install or update Codex, enter TMUX, and start Codex immediately:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/DEC-Networks/PUBLIC-TMUX-Codex/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/DEC-Networks/09-Public/main/TMUX-Codex/install.sh | bash
 ```
 
 That is the entire installation command.
@@ -25,7 +26,7 @@ That is the entire installation command.
 Pinned release:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/DEC-Networks/PUBLIC-TMUX-Codex/v26.7.14.1/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/DEC-Networks/09-Public/tmux-codex-v26.7.14.1/TMUX-Codex/install.sh | bash
 ```
 
 ## What It Does
@@ -47,13 +48,13 @@ subject to OpenAI's terms and policies.
 Pass runner options after `bash -s --`:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/DEC-Networks/PUBLIC-TMUX-Codex/main/install.sh | bash -s -- --session my-codex
+curl -fsSL https://raw.githubusercontent.com/DEC-Networks/09-Public/main/TMUX-Codex/install.sh | bash -s -- --session my-codex
 ```
 
 Pass Codex arguments after a second `--`:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/DEC-Networks/PUBLIC-TMUX-Codex/main/install.sh | bash -s -- -- -C "$PWD"
+curl -fsSL https://raw.githubusercontent.com/DEC-Networks/09-Public/main/TMUX-Codex/install.sh | bash -s -- -- -C "$PWD"
 ```
 
 Configuration is available through `CODEX_TMUX_SESSION`,

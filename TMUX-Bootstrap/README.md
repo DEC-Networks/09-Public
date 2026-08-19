@@ -1,6 +1,7 @@
-# PUBLIC-TMUX-Bootstrap
+# TMUX Bootstrap
 
-`PUBLIC-TMUX-Bootstrap` is the public, organization-neutral JERVIS launcher for
+`TMUX-Bootstrap` is the public, organization-neutral JERVIS launcher in the
+`DEC-Networks/09-Public` repository for
 installing supported AI coding agents from their official sources and running
 them inside TMUX. It contains no DEC-Networks credentials, private hosts,
 private paths, or private repository dependencies.
@@ -9,7 +10,7 @@ Current launcher version: `v26.7.14.4`.
 
 ## Repository Identity
 
-- Repository: `DEC-Networks/PUBLIC-TMUX-Bootstrap`
+- Repository path: `DEC-Networks/09-Public/TMUX-Bootstrap`
 - Audience: public users and repackagers
 - Agents: OpenAI Codex, Anthropic Claude Code, Google AGY, and xAI Grok
 - Scope: portable TMUX bootstrap only; not internal workstation configuration
@@ -17,7 +18,7 @@ Current launcher version: `v26.7.14.4`.
 Open one remote-host launcher, choose an agent, and start working inside TMUX:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/DEC-Networks/PUBLIC-TMUX-Bootstrap/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/DEC-Networks/09-Public/main/TMUX-Bootstrap/install.sh | bash
 ```
 
 That is the entire command. The launcher asks:
@@ -82,7 +83,7 @@ repository.
 Skip the menu while retaining the TMUX-first behavior:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/DEC-Networks/PUBLIC-TMUX-Bootstrap/main/install.sh | bash -s -- --provider codex
+curl -fsSL https://raw.githubusercontent.com/DEC-Networks/09-Public/main/TMUX-Bootstrap/install.sh | bash -s -- --provider codex
 ```
 
 Provider names are `codex`, `claude`, `agy`, and `grok`. `gemini`,
@@ -90,7 +91,7 @@ Provider names are `codex`, `claude`, `agy`, and `grok`. `gemini`,
 are passed to the selected terminal agent:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/DEC-Networks/PUBLIC-TMUX-Bootstrap/main/install.sh | bash -s -- --provider codex -- --sandbox workspace-write
+curl -fsSL https://raw.githubusercontent.com/DEC-Networks/09-Public/main/TMUX-Bootstrap/install.sh | bash -s -- --provider codex -- --sandbox workspace-write
 ```
 
 ## Pinned Release
@@ -98,7 +99,7 @@ curl -fsSL https://raw.githubusercontent.com/DEC-Networks/PUBLIC-TMUX-Bootstrap/
 Use the immutable release URL when reproducibility matters:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/DEC-Networks/PUBLIC-TMUX-Bootstrap/v26.7.14.4/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/DEC-Networks/09-Public/tmux-bootstrap-v26.7.14.4/TMUX-Bootstrap/install.sh | bash
 ```
 
 ## Repackage
