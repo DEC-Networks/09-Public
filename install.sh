@@ -6,7 +6,7 @@ set -euo pipefail
 umask 077
 
 readonly BOOTSTRAP_VERSION="v26.7.14.4"
-readonly DEFAULT_RUNNER_URL="https://raw.githubusercontent.com/DEC-Networks/agent-tmux-bootstrap/v26.7.14.4/runner.sh"
+readonly DEFAULT_RUNNER_URL="https://raw.githubusercontent.com/DEC-Networks/PUBLIC-TMUX-Bootstrap/v26.7.14.4/runner.sh"
 readonly DEFAULT_RUNNER_SHA256="d87c191ea0634729a073cb384ccdbf5b85c62f2df16dc73bd5230e3695d6cd74"
 
 RUNNER_URL="${JERVIS_AGENT_RUNNER_URL:-$DEFAULT_RUNNER_URL}"
